@@ -17,22 +17,55 @@
   },
   "license": "ISC",
   "author": "Ben Coe <bencoe@gmail.com>",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/esm/wrapper.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "import": "./dist/esm/wrapper.js",
+    "require": "./dist/index.js"
+  },
   "files": [
-    "index.js"
+    "dist"
   ],
   "scripts": {
-    "fix": "standard --fix",
+    "fix": "eslint --ext .json,.js,.ts,.mjs,.cjs --fix .",
     "coverage": "c8 --check-coverage report",
-    "pretest": "standard",
-    "test": "c8 mocha"
+    "pretest": "cross-env NODE_ENV=test npm run build",
+    "test": "cross-env TS_NODE_PROJECT=tsconfig.test.json c8 --reporter=text --reporter=html mocha",
+    "test:build": "npm run test:build:cjs && npm run test:build:esm",
+    "test:build:cjs": "node ./scripts/test-build.cjs",
+    "test:build:esm": "node ./scripts/test-build.mjs",
+    "check": "eslint --ext .json,.js,.ts,.mjs,.cjs .",
+    "clean": "gts clean && rimraf coverage",
+    "prebuild": "npm run clean",
+    "build": "rollup -c",
+    "postbuild": "cross-env TS_NODE_PROJECT=tsconfig.scripts.json ts-node ./scripts/post-build.ts",
+    "prepare": "npm run build",
+    "posttest": "npm run test:build && npm run check"
   },
   "devDependencies": {
+    "@npm/types": "^1.0.1",
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
+    "@types/chai": "^4.2.12",
+    "@types/mocha": "^8.0.2",
+    "@types/node": "^13.11.1",
+    "@types/rimraf": "^3.0.0",
+    "@wessberg/rollup-plugin-ts": "^1.3.2",
     "c8": "^7.3.0",
     "chai": "^4.0.1",
+    "cross-env": "^7.0.2",
+    "eslint-plugin-compat": "^3.8.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-json": "^2.1.2",
+    "gts": "^2.0.2",
     "mocha": "^8.0.0",
     "rimraf": "^3.0.2",
-    "standard": "^14.3.4"
+    "rollup": "^2.23.1",
+    "rollup-plugin-filesize": "^9.0.2",
+    "rollup-plugin-terser": "^7.0.0",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.8.3"
   },
   "engines": {
     "node": ">=10"

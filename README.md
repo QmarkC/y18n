@@ -1,7 +1,7 @@
 # y18n
 
 [![NPM version][npm-image]][npm-url]
-[![js-standard-style][standard-image]][standard-url]
+[![Code Style: Google][gts-image]][gts-url]
 [![Conventional Commits][conventionalcommits-image]][conventionalcommits-url]
 
 The bare-bones internationalization library used by yargs.
@@ -106,7 +106,7 @@ ISC
 
 [npm-url]: https://npmjs.org/package/y18n
 [npm-image]: https://img.shields.io/npm/v/y18n.svg
-[standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
-[standard-url]: https://github.com/feross/standard
+[gts-image]: https://img.shields.io/badge/code%20style-google-blueviolet.svg
+[gts-url]: https://github.com/google/gts
 [conventionalcommits-image]: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg
 [conventionalcommits-url]: https://conventionalcommits.org

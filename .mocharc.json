@@ -1,0 +1,7 @@
+{
+  "enable-source-maps": true,
+  "timeout": 160000,
+  "throw-deprecation": true,
+  "require": "ts-node/register",
+  "spec": "test/**/*.test.ts"
+}
