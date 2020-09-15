@@ -1,21 +1,12 @@
-# Change Log
+# Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
-
-<a name="4.0.0"></a>
-# [4.0.0](https://github.com/yargs/y18n/compare/v3.2.1...v4.0.0) (2017-10-10)
+## [5.0.0](https://www.github.com/QmarkC/y18n/compare/v4.0.0...v5.0.0) (2020-08-05)
 
 
-### Bug Fixes
+### ⚠ BREAKING CHANGES
 
-* allow support for falsy values like 0 in tagged literal ([#45](https://github.com/yargs/y18n/issues/45)) ([c926123](https://github.com/yargs/y18n/commit/c926123))
+* drops Node 6 and 4. begin following Node.js LTS schedule (#89)
 
+### Build System
 
-### Features
-
-* **__:** added tagged template literal support ([#44](https://github.com/yargs/y18n/issues/44)) ([0598daf](https://github.com/yargs/y18n/commit/0598daf))
-
-
-### BREAKING CHANGES
-
-* **__:** dropping Node 0.10/Node 0.12 support
+* drops Node 6 and 4. begin following Node.js LTS schedule ([#89](https://www.github.com/QmarkC/y18n/issues/89)) ([3cc0c28](https://www.github.com/QmarkC/y18n/commit/3cc0c287240727b84eaf1927f903612ec80f5e43))
